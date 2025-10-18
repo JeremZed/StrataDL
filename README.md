@@ -22,7 +22,19 @@ Installer le module en mode développement
 
 ```bash
 cd package
-uv pip install -e .
+uv pip install -e .[dev]
+```
+
+Lancer les tests unitaires
+
+```bash
+pytest -v
+```
+
+Couverture du code par les tests
+
+```bash
+pytest --cov=stratadl --cov-report=term-missing
 ```
 
 ## Architecture

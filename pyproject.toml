@@ -1,18 +1,31 @@
 [project]
 name = "stratadl"
+version = "0.0.1"
 authors = [
-    {name = "THULLIEZ Jérémy", email = "j.thulliez@gmail.com"}
+  { name="THULLIEZ Jérémy", email="j.thulliez@gmail.com" },
 ]
-version = "0.1.0"
 description = "Framework pour accélérer les projets d'IA en entreprise."
 readme = "README.md"
-license = "MIT"
-classifiers = [
-    "Development Status :: Beta",
-]
 requires-python = ">=3.12"
-dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+dependencies = [
+    "beautifulsoup4>=4.14.2",
+    "requests>=2.32.5",
+    "typer>=0.19.2",
+]
 
 [project.urls]
 Homepage = "https://github.com/JeremZed/StrataDL"
 Issues = "https://github.com/JeremZed/StrataDL/issues"
+
+[project.scripts]
+stratadl = "stratadl.cli.main:app"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "typer"]
