@@ -1,0 +1,3 @@
+- Rédiger le README.md
+- Designer l'architecture du dépôt
+- Designer l'architecture du framework

@@ -1,0 +1,18 @@
+[project]
+name = "stratadl"
+authors = [
+    {name = "THULLIEZ Jérémy", email = "j.thulliez@gmail.com"}
+]
+version = "0.1.0"
+description = "Framework pour accélérer les projets d'IA en entreprise."
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Development Status :: Beta",
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/JeremZed/StrataDL"
+Issues = "https://github.com/JeremZed/StrataDL/issues"
