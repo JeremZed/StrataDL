@@ -1,6 +1,6 @@
 [project]
 name = "stratadl"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="THULLIEZ Jérémy", email="j.thulliez@gmail.com" },
 ]
@@ -28,4 +28,4 @@ Issues = "https://github.com/JeremZed/StrataDL/issues"
 stratadl = "stratadl.cli.main:app"
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov", "typer"]
+dev = ["pytest", "pytest-cov", "pytest-mock"]

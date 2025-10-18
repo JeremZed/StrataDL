@@ -3,7 +3,7 @@
 Ce dépôt est dédié à l'implémentation de divers algorithmes de Deep Learning. Il inclut également une librairie maison conçue pour simplifier les tâches courantes telles que la création de datasets, la visualisation, et plus encore, spécifiquement pensée pour accélérer les projets d'IA en entreprise.
 
 ![CI](https://github.com/JeremZed/StrataDL/workflows/CI%20-%20Tests%20stratadl/badge.svg)
-![Coverage](https://img.shields.io/badge/coverage-7%25-red)
+![Coverage](https://img.shields.io/badge/coverage-97%25-brightgreen)
 
 
 ## Installation
@@ -39,6 +39,11 @@ Couverture du code par les tests
 
 ```bash
 pytest --cov=stratadl --cov-report=term-missing
+```
+
+Pour avoir un rapport HTML pour visualiser les portions de codes concernées.
+```bash
+pytest --cov=stratadl --cov-report=html
 ```
 
 ## Architecture
