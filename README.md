@@ -2,6 +2,10 @@
 
 Ce dépôt est dédié à l'implémentation de divers algorithmes de Deep Learning. Il inclut également une librairie maison conçue pour simplifier les tâches courantes telles que la création de datasets, la visualisation, et plus encore, spécifiquement pensée pour accélérer les projets d'IA en entreprise.
 
+![CI](https://github.com/JeremZed/StrataDL/workflows/CI%20-%20Tests%20stratadl/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
+
+
 ## Installation
 
 Clonez le dépôt:
