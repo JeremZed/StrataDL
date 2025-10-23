@@ -1,6 +1,6 @@
 [project]
 name = "stratadl"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="THULLIEZ Jérémy", email="j.thulliez@gmail.com" },
 ]
@@ -16,7 +16,11 @@ license-files = ["LICEN[CS]E*"]
 
 dependencies = [
     "beautifulsoup4>=4.14.2",
+    "numpy>=2.3.4",
     "requests>=2.32.5",
+    "sentence-transformers>=5.1.2",
+    "torch>=2.9.0",
+    "transformers>=4.57.1",
     "typer>=0.19.2",
 ]
 
