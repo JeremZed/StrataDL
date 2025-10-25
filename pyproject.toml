@@ -1,6 +1,6 @@
 [project]
 name = "stratadl"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
   { name="THULLIEZ Jérémy", email="j.thulliez@gmail.com" },
 ]
@@ -17,6 +17,8 @@ license-files = ["LICEN[CS]E*"]
 dependencies = [
     "beautifulsoup4>=4.14.2",
     "chromadb>=1.2.1",
+    "mammoth>=1.11.0",
+    "markdownify>=1.2.0",
     "numpy>=2.3.4",
     "requests>=2.32.5",
     "sentence-transformers>=5.1.2",

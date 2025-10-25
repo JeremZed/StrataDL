@@ -209,3 +209,4 @@ __marimo__/
 
 notebooks/scraped_csv
 notebooks/.chromadb
+datas/

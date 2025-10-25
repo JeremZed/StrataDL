@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import Mock, MagicMock
 import json
+import tempfile
 
 
 @pytest.fixture
@@ -144,3 +145,45 @@ def mock_requests_stream_response(mock_stream_chunks_ollama):
 
     mock_response.iter_lines = iter_lines
     return mock_response
+
+@pytest.fixture
+def temp_output_dir():
+    """Crée un répertoire temporaire pour les tests"""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        yield tmpdir
+
+
+@pytest.fixture
+def sample_docx_path(tmp_path):
+    """Crée un chemin de fichier docx factice pour les tests"""
+    file_path = tmp_path / "sample.docx"
+    return str(file_path)
+
+
+@pytest.fixture
+def sample_html_content():
+    """Retourne du contenu HTML d'exemple"""
+    return """
+    <html>
+        <body>
+            <h1>Test Document</h1>
+            <p>This is a <strong>test</strong> paragraph.</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </body>
+    </html>
+    """
+
+
+@pytest.fixture
+def sample_markdown_content():
+    """Retourne du contenu Markdown d'exemple"""
+    return """# Test Document
+
+This is a **test** paragraph.
+
+* Item 1
+* Item 2
+"""
