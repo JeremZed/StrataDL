@@ -35,7 +35,8 @@ class TestOllamaProvider:
     def test_generate_non_stream_success(self, mock_post):
         """Test generate en mode non-stream"""
         mock_response = Mock()
-        mock_response.text = '{"response": "Hello"}\n{"response": " world", "done": true}'
+        # Format correspondant à la nouvelle structure avec message.content
+        mock_response.text = '{"message": {"content": "Hello world"}}'
         mock_response.raise_for_status = Mock()
         mock_post.return_value = mock_response
 
@@ -405,9 +406,10 @@ class TestOllamaProvider:
         assert "Request failed:" in captured.out
 
     def test_handle_non_stream_multiple_outputs(self):
-        """Test _handle_non_stream avec plusieurs lignes de réponse"""
+        """Test _handle_non_stream avec le nouveau format JSON"""
         mock_response = Mock()
-        mock_response.text = '{"response": "Part1"}\n{"response": " Part2"}\n{"response": " Part3", "done": true}'
+        # Un seul objet JSON avec message.content (pas de lignes multiples)
+        mock_response.text = '{"message": {"content": "Part1 Part2 Part3"}}'
 
         provider = OllamaProvider()
         result = provider._handle_non_stream(mock_response)
@@ -440,9 +442,9 @@ class TestOllamaProviderIntegration:
         mock_get_response.raise_for_status = Mock()
         mock_get.return_value = mock_get_response
 
-        # Mock pour generate
+        # Mock pour generate avec le nouveau format
         mock_post_response = Mock()
-        mock_post_response.text = '{"response": "Test response", "done": true}'
+        mock_post_response.text = '{"message": {"content": "Test response"}}'
         mock_post_response.raise_for_status = Mock()
         mock_post.return_value = mock_post_response
 
@@ -533,7 +535,7 @@ class TestOllamaProviderEdgeCases:
     def test_generate_with_very_long_prompt(self, mock_post):
         """Test generate avec un prompt très long"""
         mock_response = Mock()
-        mock_response.text = '{"response": "ok", "done": true}'
+        mock_response.text = '{"message": {"content": "ok"}}'
         mock_response.raise_for_status = Mock()
         mock_post.return_value = mock_response
 

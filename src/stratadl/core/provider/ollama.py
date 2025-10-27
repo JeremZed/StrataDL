@@ -109,16 +109,20 @@ class OllamaProvider(BaseProvider):
         return OllamaStreamResult(stream_generator())
 
     def _handle_non_stream(self, response):
-        """Gère la réponse non-streamée"""
-        lines = response.text.strip().split("\n")
-        outputs = [json.loads(line) for line in lines]
+        """Gère la réponse non-streamée (JSON unique)"""
 
-        # Reconstruit la réponse complète
-        full_text = ""
-        for output in outputs:
-            full_text += output.get('response', '')
+        try:
+            data = json.loads(response.text)
+        except json.JSONDecodeError as e:
+            print("Debug: JSON decode error:", e)
+            print("Debug: Raw response:", response.text)
+            return ""
 
-        return full_text
+        # Accès direct au texte dans le champ message.content
+        message = data.get("message", {})
+        content = message.get("content", "")
+
+        return content.strip()
 
     def embed(self, text: str, **kwargs) -> list[float]:
         try:
