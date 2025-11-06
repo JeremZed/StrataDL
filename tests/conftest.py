@@ -187,3 +187,48 @@ This is a **test** paragraph.
 * Item 1
 * Item 2
 """
+
+@pytest.fixture
+def sample_text():
+    """Texte d'exemple pour les tests"""
+    return """Ceci est un premier paragraphe.
+Il contient plusieurs phrases. Chaque phrase a du sens.
+
+Ceci est un second paragraphe.
+Il est séparé du premier par une ligne vide.
+
+Troisième paragraphe ici."""
+
+
+@pytest.fixture
+def long_text():
+    """Texte long pour tester le découpage"""
+    return " ".join(["mot"] * 200)
+
+@pytest.fixture
+def sample_markdown():
+    """Contenu Markdown pour les tests"""
+    return """# Titre principal
+
+## Section 1
+
+Ceci est un paragraphe dans la section 1.
+Il contient plusieurs lignes.
+
+## Section 2
+
+### Sous-section 2.1
+
+Contenu de la sous-section.
+
+---
+
+Après la règle horizontale."""
+
+@pytest.fixture
+def basic_metadata():
+    """Métadonnées de base pour les tests"""
+    return {
+        "source": "test",
+        "author": "pytest"
+    }
