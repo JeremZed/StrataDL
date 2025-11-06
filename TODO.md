@@ -1,5 +1,7 @@
-Rédiger le README.md {cm:2025-10-18}
-Designer l'architecture du dépôt {cm:2025-10-18}
-Designer l'architecture du framework {cm:2025-10-18}
-implementation d'un scraper http standard {cm:2025-10-18}
-implémenter scraper dans CLI
+Rédiger le README.md #README {cm:2025-11-06}
+Designer l'architecture du dépôt #CORE {cm:2025-11-06}
+Designer l'architecture du framework #CORE {cm:2025-11-06}
+implementation d'un scraper http standard #CORE {cm:2025-11-06}
+implémenter scraper dans CLI #CLI
+implémentation chunkings #CORE {cm:2025-11-06}
+ajouter ingestion de PDF #CORE {cm:2025-11-06}
